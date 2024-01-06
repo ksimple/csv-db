@@ -1,0 +1,11 @@
+T__0=1
+T__1=2
+T__2=3
+T__3=4
+STRING=5
+BINARY_OPERATOR=6
+WS=7
+'or'=1
+'and'=2
+'('=3
+')'=4

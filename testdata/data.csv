@@ -1,0 +1,16 @@
+Nation,Category,Entity
+A,B,C
+United StAtes,Best Rapper,XXXTentacion
+A,,B,C
+,A,B,C
+A,B
+
+"abc",def,kk
+ADFA ASDFSDF, ASDFASDF SDF,DSF SDF SD,FS,DF,
+""
+"\K",A,Best
+A,B,C
+A,B,C
+"\"abc\"",A,B
+"\"abc\"",A,B
+"\"abc\"","\\","\n"
