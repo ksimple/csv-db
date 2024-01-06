@@ -1,5 +1,5 @@
 
-// Generated from src/query_parser.g4 by ANTLR 4.13.1
+// Generated from src/Query.g4 by ANTLR 4.13.1
 
 #pragma once
 
@@ -9,16 +9,16 @@
 
 
 
-class  query_parserLexer : public antlr4::Lexer {
+class  QueryLexer : public antlr4::Lexer {
 public:
   enum {
     T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, STRING = 5, BINARY_OPERATOR = 6, 
     WS = 7
   };
 
-  explicit query_parserLexer(antlr4::CharStream *input);
+  explicit QueryLexer(antlr4::CharStream *input);
 
-  ~query_parserLexer() override;
+  ~QueryLexer() override;
 
 
   std::string getGrammarFileName() const override;

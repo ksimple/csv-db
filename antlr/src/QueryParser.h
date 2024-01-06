@@ -1,5 +1,5 @@
 
-// Generated from src/query_parser.g4 by ANTLR 4.13.1
+// Generated from src/Query.g4 by ANTLR 4.13.1
 
 #pragma once
 
@@ -9,7 +9,7 @@
 
 
 
-class  query_parserParser : public antlr4::Parser {
+class  QueryParser : public antlr4::Parser {
 public:
   enum {
     T__0 = 1, T__1 = 2, T__2 = 3, T__3 = 4, STRING = 5, BINARY_OPERATOR = 6, 
@@ -18,14 +18,14 @@ public:
 
   enum {
     RuleExpression = 0, RuleOrExpression = 1, RuleAndExpression = 2, RuleBinaryExpression = 3, 
-    RuleAtom = 4, RuleBinaryOperator = 5
+    RuleAtom = 4
   };
 
-  explicit query_parserParser(antlr4::TokenStream *input);
+  explicit QueryParser(antlr4::TokenStream *input);
 
-  query_parserParser(antlr4::TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options);
+  QueryParser(antlr4::TokenStream *input, const antlr4::atn::ParserATNSimulatorOptions &options);
 
-  ~query_parserParser() override;
+  ~QueryParser() override;
 
   std::string getGrammarFileName() const override;
 
@@ -42,8 +42,7 @@ public:
   class OrExpressionContext;
   class AndExpressionContext;
   class BinaryExpressionContext;
-  class AtomContext;
-  class BinaryOperatorContext; 
+  class AtomContext; 
 
   class  ExpressionContext : public antlr4::ParserRuleContext {
   public:
@@ -92,7 +91,7 @@ public:
     virtual size_t getRuleIndex() const override;
     std::vector<AtomContext *> atom();
     AtomContext* atom(size_t i);
-    BinaryOperatorContext *binaryOperator();
+    antlr4::tree::TerminalNode *BINARY_OPERATOR();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -114,19 +113,6 @@ public:
   };
 
   AtomContext* atom();
-
-  class  BinaryOperatorContext : public antlr4::ParserRuleContext {
-  public:
-    BinaryOperatorContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *BINARY_OPERATOR();
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-   
-  };
-
-  BinaryOperatorContext* binaryOperator();
 
 
   // By default the static state used to implement the parser is lazily initialized during the first

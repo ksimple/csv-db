@@ -6,8 +6,8 @@
 
 #include "tools.hpp"
 
-#include "query_parserLexer.h"
-#include "query_parserParser.h"
+#include "QueryLexer.h"
+#include "QueryParser.h"
 
 using namespace Pistache;
 using namespace std;
@@ -30,10 +30,10 @@ public:
                 auto queryParam = decodeURIComponent(query.value());
 
                 antlr4::ANTLRInputStream input(*queryParam);
-                query_parserLexer lexer(&input);
+                QueryLexer lexer(&input);
                 antlr4::CommonTokenStream tokens(&lexer);
-                query_parserParser parser(&tokens);
-                query_parserParser::ExpressionContext *tree = parser.expression();
+                QueryParser parser(&tokens);
+                QueryParser::ExpressionContext *tree = parser.expression();
 
                 stringstream ss;
                 ss << "query: " << *queryParam << ", ret: " << tree->toStringTree(&parser) << endl;

@@ -1,8 +1,8 @@
 
-// Generated from src/query_parser.g4 by ANTLR 4.13.1
+// Generated from src/Query.g4 by ANTLR 4.13.1
 
 
-#include "query_parserLexer.h"
+#include "QueryLexer.h"
 
 
 using namespace antlr4;
@@ -13,8 +13,8 @@ using namespace antlr4;
 
 namespace {
 
-struct Query_parserLexerStaticData final {
-  Query_parserLexerStaticData(std::vector<std::string> ruleNames,
+struct QueryLexerStaticData final {
+  QueryLexerStaticData(std::vector<std::string> ruleNames,
                           std::vector<std::string> channelNames,
                           std::vector<std::string> modeNames,
                           std::vector<std::string> literalNames,
@@ -24,10 +24,10 @@ struct Query_parserLexerStaticData final {
         symbolicNames(std::move(symbolicNames)),
         vocabulary(this->literalNames, this->symbolicNames) {}
 
-  Query_parserLexerStaticData(const Query_parserLexerStaticData&) = delete;
-  Query_parserLexerStaticData(Query_parserLexerStaticData&&) = delete;
-  Query_parserLexerStaticData& operator=(const Query_parserLexerStaticData&) = delete;
-  Query_parserLexerStaticData& operator=(Query_parserLexerStaticData&&) = delete;
+  QueryLexerStaticData(const QueryLexerStaticData&) = delete;
+  QueryLexerStaticData(QueryLexerStaticData&&) = delete;
+  QueryLexerStaticData& operator=(const QueryLexerStaticData&) = delete;
+  QueryLexerStaticData& operator=(QueryLexerStaticData&&) = delete;
 
   std::vector<antlr4::dfa::DFA> decisionToDFA;
   antlr4::atn::PredictionContextCache sharedContextCache;
@@ -41,21 +41,21 @@ struct Query_parserLexerStaticData final {
   std::unique_ptr<antlr4::atn::ATN> atn;
 };
 
-::antlr4::internal::OnceFlag query_parserlexerLexerOnceFlag;
+::antlr4::internal::OnceFlag querylexerLexerOnceFlag;
 #if ANTLR4_USE_THREAD_LOCAL_CACHE
 static thread_local
 #endif
-Query_parserLexerStaticData *query_parserlexerLexerStaticData = nullptr;
+QueryLexerStaticData *querylexerLexerStaticData = nullptr;
 
-void query_parserlexerLexerInitialize() {
+void querylexerLexerInitialize() {
 #if ANTLR4_USE_THREAD_LOCAL_CACHE
-  if (query_parserlexerLexerStaticData != nullptr) {
+  if (querylexerLexerStaticData != nullptr) {
     return;
   }
 #else
-  assert(query_parserlexerLexerStaticData == nullptr);
+  assert(querylexerLexerStaticData == nullptr);
 #endif
-  auto staticData = std::make_unique<Query_parserLexerStaticData>(
+  auto staticData = std::make_unique<QueryLexerStaticData>(
     std::vector<std::string>{
       "T__0", "T__1", "T__2", "T__3", "STRING", "BINARY_OPERATOR", "WS"
     },
@@ -77,11 +77,11 @@ void query_parserlexerLexerInitialize() {
   	1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,2,1,2,1,3,1,3,1,4,4,4,28,8,4,11,4,12,4,
   	29,1,4,1,4,1,4,1,4,5,4,36,8,4,10,4,12,4,39,9,4,1,4,3,4,42,8,4,1,5,1,5,
   	1,5,1,5,1,5,1,5,1,5,1,5,3,5,52,8,5,1,6,4,6,55,8,6,11,6,12,6,56,1,6,1,
-  	6,0,0,7,1,1,3,2,5,3,7,4,9,5,11,6,13,7,1,0,6,4,0,33,34,36,36,38,38,61,
-  	61,1,0,34,34,2,0,34,34,92,92,1,0,92,92,3,0,34,34,92,92,110,110,3,0,9,
-  	10,13,13,32,32,67,0,1,1,0,0,0,0,3,1,0,0,0,0,5,1,0,0,0,0,7,1,0,0,0,0,9,
-  	1,0,0,0,0,11,1,0,0,0,0,13,1,0,0,0,1,15,1,0,0,0,3,18,1,0,0,0,5,22,1,0,
-  	0,0,7,24,1,0,0,0,9,41,1,0,0,0,11,51,1,0,0,0,13,54,1,0,0,0,15,16,5,111,
+  	6,0,0,7,1,1,3,2,5,3,7,4,9,5,11,6,13,7,1,0,6,5,0,9,9,32,34,36,36,38,38,
+  	61,61,1,0,34,34,2,0,34,34,92,92,1,0,92,92,3,0,34,34,92,92,110,110,3,0,
+  	9,10,13,13,32,32,67,0,1,1,0,0,0,0,3,1,0,0,0,0,5,1,0,0,0,0,7,1,0,0,0,0,
+  	9,1,0,0,0,0,11,1,0,0,0,0,13,1,0,0,0,1,15,1,0,0,0,3,18,1,0,0,0,5,22,1,
+  	0,0,0,7,24,1,0,0,0,9,41,1,0,0,0,11,51,1,0,0,0,13,54,1,0,0,0,15,16,5,111,
   	0,0,16,17,5,114,0,0,17,2,1,0,0,0,18,19,5,97,0,0,19,20,5,110,0,0,20,21,
   	5,100,0,0,21,4,1,0,0,0,22,23,5,40,0,0,23,6,1,0,0,0,24,25,5,41,0,0,25,
   	8,1,0,0,0,26,28,8,0,0,0,27,26,1,0,0,0,28,29,1,0,0,0,29,27,1,0,0,0,29,
@@ -105,55 +105,55 @@ void query_parserlexerLexerInitialize() {
   for (size_t i = 0; i < count; i++) { 
     staticData->decisionToDFA.emplace_back(staticData->atn->getDecisionState(i), i);
   }
-  query_parserlexerLexerStaticData = staticData.release();
+  querylexerLexerStaticData = staticData.release();
 }
 
 }
 
-query_parserLexer::query_parserLexer(CharStream *input) : Lexer(input) {
-  query_parserLexer::initialize();
-  _interpreter = new atn::LexerATNSimulator(this, *query_parserlexerLexerStaticData->atn, query_parserlexerLexerStaticData->decisionToDFA, query_parserlexerLexerStaticData->sharedContextCache);
+QueryLexer::QueryLexer(CharStream *input) : Lexer(input) {
+  QueryLexer::initialize();
+  _interpreter = new atn::LexerATNSimulator(this, *querylexerLexerStaticData->atn, querylexerLexerStaticData->decisionToDFA, querylexerLexerStaticData->sharedContextCache);
 }
 
-query_parserLexer::~query_parserLexer() {
+QueryLexer::~QueryLexer() {
   delete _interpreter;
 }
 
-std::string query_parserLexer::getGrammarFileName() const {
-  return "query_parser.g4";
+std::string QueryLexer::getGrammarFileName() const {
+  return "Query.g4";
 }
 
-const std::vector<std::string>& query_parserLexer::getRuleNames() const {
-  return query_parserlexerLexerStaticData->ruleNames;
+const std::vector<std::string>& QueryLexer::getRuleNames() const {
+  return querylexerLexerStaticData->ruleNames;
 }
 
-const std::vector<std::string>& query_parserLexer::getChannelNames() const {
-  return query_parserlexerLexerStaticData->channelNames;
+const std::vector<std::string>& QueryLexer::getChannelNames() const {
+  return querylexerLexerStaticData->channelNames;
 }
 
-const std::vector<std::string>& query_parserLexer::getModeNames() const {
-  return query_parserlexerLexerStaticData->modeNames;
+const std::vector<std::string>& QueryLexer::getModeNames() const {
+  return querylexerLexerStaticData->modeNames;
 }
 
-const dfa::Vocabulary& query_parserLexer::getVocabulary() const {
-  return query_parserlexerLexerStaticData->vocabulary;
+const dfa::Vocabulary& QueryLexer::getVocabulary() const {
+  return querylexerLexerStaticData->vocabulary;
 }
 
-antlr4::atn::SerializedATNView query_parserLexer::getSerializedATN() const {
-  return query_parserlexerLexerStaticData->serializedATN;
+antlr4::atn::SerializedATNView QueryLexer::getSerializedATN() const {
+  return querylexerLexerStaticData->serializedATN;
 }
 
-const atn::ATN& query_parserLexer::getATN() const {
-  return *query_parserlexerLexerStaticData->atn;
+const atn::ATN& QueryLexer::getATN() const {
+  return *querylexerLexerStaticData->atn;
 }
 
 
 
 
-void query_parserLexer::initialize() {
+void QueryLexer::initialize() {
 #if ANTLR4_USE_THREAD_LOCAL_CACHE
-  query_parserlexerLexerInitialize();
+  querylexerLexerInitialize();
 #else
-  ::antlr4::internal::call_once(query_parserlexerLexerOnceFlag, query_parserlexerLexerInitialize);
+  ::antlr4::internal::call_once(querylexerLexerOnceFlag, querylexerLexerInitialize);
 #endif
 }
